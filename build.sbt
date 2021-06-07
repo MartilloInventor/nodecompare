@@ -1,11 +1,11 @@
-import sbt.Keys.publishMavenStyle
+//import sbt.Keys.publishMavenStyle
 import scala.io._
 
 val projectVersion = Source.fromFile("project.version").mkString.trim
-val scalaV = "2.13.6"
-scalaVersion := "2.13.6"
+val scalaV = "2.12.4"
+val _ = scalaVersion := "2.12.4"
 
-lazy val describeProject = taskKey[Unit]{"Describe the goal of this project."}
+lazy val describeProject = taskKey[Unit]("Describe the goal of this project.")
 describeProject := { // if I used println no method would need to be defined because println is defined in scala.io.source
   printlen ("This project tests a simple Scala project.")
   printlen ("One project is defined called mainproject. The compile task is built in the SBT. Native packaging task")
@@ -68,11 +68,12 @@ val sharedSettings = Defaults.coreDefaultSettings ++ Seq(
   // I am treating the local maven repository like a custom repository. It might not be necessary, but we really don't
   // want to use a maven local repository.
   // According to stack overflow maven-local is disabled.
-//  resolvers ++= Seq(
-//  "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"
+  resolvers ++= Seq(
+    "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository",
+    ("typesafe-releases" at "http://repo.typesafe.com/typesafe/releases").withAllowInsecureProtocol(true)
 //  "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/HyperactiveProjects/HyperactiveRepository/repository"
 //    "Remote Custom Repository" at "https://raw.github.com/HyperactiveInc/HyperactiveRepository/master/repository"
-//  ),
+  ),
   // library dependencies. (organization name) % (project name) % (version)
   // Here is the logic of converting from maven dependencies to sbt dependencies.
   // http://xerial.org/blog/2014/03/24/sbt/

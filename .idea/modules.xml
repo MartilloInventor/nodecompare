@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/nodecompare.iml" filepath="$PROJECT_DIR$/nodecompare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.nodecompare.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.nodecompare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nodecompare.iml" filepath="$PROJECT_DIR$/.idea/modules/nodecompare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nodecompare-build.iml" filepath="$PROJECT_DIR$/.idea/modules/nodecompare-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.nodecompare-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project.nodecompare-build.iml" />
     </modules>
   </component>
 </project>
