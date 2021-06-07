@@ -1,0 +1,38 @@
+name: root1
+nodedefinitions:
+  - name: node3
+    value: 3
+    left: node5
+    right: node1
+  - name: node5
+    value: 5
+    left: node6
+    right: node2
+  - name: node6
+    value: 6
+    left:
+    right:
+  - name: node2
+    value: 2
+    left: node7
+    right: node4
+  - name: node7
+    value: 7
+    left:
+    right:
+  - name: node4
+    value: 4
+    left:
+    right:
+  - name: node1
+    value: 1
+    left: node9
+    right: node8
+  - name: node9
+    value: 9
+    left:
+    right:
+  - name: node8
+    value: 8
+    left:
+    right:
