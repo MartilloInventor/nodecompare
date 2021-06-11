@@ -1,9 +1,10 @@
 //import sbt.Keys.publishMavenStyle
 import scala.io._
-
 val projectVersion = Source.fromFile("project.version").mkString.trim
-val scalaV = "2.12.4"
-val _ = scalaVersion := "2.12.4"
+
+
+val scalaV = "2.13.6"
+val _ = scalaVersion := "2.13.6"
 
 lazy val describeProject = taskKey[Unit]("Describe the goal of this project.")
 describeProject := { // if I used println no method would need to be defined because println is defined in scala.io.source

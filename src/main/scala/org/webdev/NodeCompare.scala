@@ -7,7 +7,7 @@ import scala.beans.BeanProperty
 import java.io.{File, FileInputStream}
 
 object NodeCompare {
-  def main(args: Array[String]) = {
+  def main(args: Array[String]): Unit = {
     val filename1 = "src/main/data/config1.yaml"
     val filename2 = "src/main/data/config2.yaml"
     val input1 = new FileInputStream(new File(filename1))
@@ -69,7 +69,7 @@ class NodeDefinition {
 
 class TreeDefinition {
   @BeanProperty var name = ""
-  @BeanProperty var nodedefinitions = Array[NodeDefinition]()
+  @BeanProperty var nodedefinitions: Array[NodeDefinition] = Array[NodeDefinition]()
   override def toString: String = s"Tree Definition: name $name:\n"+conCatNodeDefs(nodedefinitions)
   def conCatNodeDefs(defs: Array[NodeDefinition]): String = {
     var s = ""
